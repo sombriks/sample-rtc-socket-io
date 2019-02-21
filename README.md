@@ -1,2 +1,3 @@
 # sample-rtc-socket-io
-sample project showcasing real time communication with socket.io
+
+sample projects showcasing real time communication using socket.io

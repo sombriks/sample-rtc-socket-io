@@ -1,0 +1,23 @@
+{
+  "name": "sample-rtc-socket-io-server",
+  "version": "1.0.0",
+  "description": "sample project showcasing real time communication with socket.io",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sombriks/sample-rtc-socket-io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sombriks/sample-rtc-socket-io/issues"
+  },
+  "homepage": "https://github.com/sombriks/sample-rtc-socket-io#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
