@@ -19,12 +19,14 @@ const store = new Vuex.Store({
     updatePlayers(state, players) {
       state.players = players;
     },
+    moveTo(state, pos) {
+      sock.emit("move-to", pos);
+    },
   },
   actions: {},
 });
 
 sock.emit("new-guest", guest, g => {
-  console.log(g);
   store.commit("updateGuest", g);
 });
 
