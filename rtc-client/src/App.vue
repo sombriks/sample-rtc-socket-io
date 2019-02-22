@@ -4,7 +4,6 @@
       <v-stage @click="handleClick" :config="{width,height}">
         <v-layer>
           <v-circle v-for="g in $store.state.players" :key="g.sId" :config="g"></v-circle>
-          <!-- <v-circle :config="$store.state.guest"></v-circle> -->
         </v-layer>
       </v-stage>
     </div>

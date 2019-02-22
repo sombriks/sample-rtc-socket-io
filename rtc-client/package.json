@@ -12,7 +12,6 @@
     "socket.io-client": "^2.2.0",
     "vue": "^2.6.6",
     "vue-konva": "^2.0.2",
-    "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -31,20 +30,6 @@
     "url": "https://github.com/sombriks/sample-rtc-socket-io/issues"
   },
   "homepage": "https://github.com/sombriks/sample-rtc-socket-io#readme",
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
