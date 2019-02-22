@@ -23,7 +23,6 @@ const store = new Vuex.Store({
       sock.emit("move-to", pos);
     },
   },
-  actions: {},
 });
 
 sock.emit("new-guest", guest, g => {
