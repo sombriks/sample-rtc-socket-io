@@ -6,12 +6,34 @@ Vue.use(Vuex);
 
 export const sock = io("127.0.0.1:3001/lobby");
 
-const guest = { name: `Guest_${new Date().getTime()}` };
+const guest = {name: `Guest_${new Date().getTime()}`};
 
-sock.emit("new-guest", guest);
+const players = [];
 
-export default new Vuex.Store({
-  state: { sock, guest },
-  mutations: {},
-  actions: {}
+const store = new Vuex.Store({
+  state: {sock, guest, players},
+  mutations: {
+    updateGuest(state, guest) {
+      state.guest = guest;
+    },
+    updatePlayers(state, players) {
+      state.players = players;
+    },
+  },
+  actions: {},
 });
+
+sock.emit("new-guest", guest, g => {
+  console.log(g);
+  store.commit("updateGuest", g);
+});
+
+sock.on("list-players", players => {
+  store.commit("updatePlayers", players);
+});
+
+window.addEventListener("beforeunload", _ => {
+  sock.emit("bye-bye");
+});
+
+export default store;
