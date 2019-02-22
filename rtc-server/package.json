@@ -19,5 +19,8 @@
   "homepage": "https://github.com/sombriks/sample-rtc-socket-io#readme",
   "devDependencies": {
     "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "socket.io": "^2.2.0"
   }
 }
