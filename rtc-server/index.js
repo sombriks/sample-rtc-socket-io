@@ -3,7 +3,6 @@ const io = require("socket.io")(3001);
 const rnd = require("randomcolor");
 
 let guests = [];
-let moves = {};
 
 io.of("/lobby").on("connect", socket => {
   socket.on("new-guest", (guest, ack) => {
@@ -21,7 +20,6 @@ io.of("/lobby").on("connect", socket => {
   });
 
   socket.on("move-to", pos => {
-    moves[pos.sId] = pos;
     const [guest] = guests.filter(e => e.sId == pos.sId);
     if (guest) {
       if (guest.x - pos.layerX > 20) guest.x -= 15;
@@ -32,11 +30,6 @@ io.of("/lobby").on("connect", socket => {
 
       io.of("/lobby").emit("list-players", guests);
     }
-  });
-
-  socket.on("del-move", pos => {
-    delete moves[pos.sId];
-    io.of("/lobby").emit("list-moves", moves);
   });
 
   socket.on("bye-bye", _ => {
